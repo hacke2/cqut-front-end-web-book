@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>无标题文档</title>
+<style type="text/css">
+  /*通配符  初始化（所谓的reset）所有元素margin paddng为0（不建议这样	写，不是每一个元素都包含这两个属性）*/
+	* {margin:0; padding:0;}   	
+	#header {                /*ID选择器，是唯一的*/
+		height:50px;
+		background-color:#09F;
+	}
+	
+	.className {            /*类选择器,只要元素使用了该选择器,样式一样*/
+		height:25px;
+		background-color:#F30;
+	}
+	
+	span {                                /*元素选择器，颜色黄色*/
+		margin-left:30px;
+		background-color:#FC6;
+	}
+	span > a {color:gray;}                /*子选择器，颜色灰色*/     
+	
+	a:hover {color:blue;}                 /*伪类，颜色蓝色*/
+	
+	h1,p {                            /*选择器分组，让相同属性放在一起*/
+		font-size:20px;
+		font-family:"宋体";
+		color:white;
+		margin:10px 0 0 30px;
+		background-color:blue;
+	}
+</style>
+</head>
+
+<body>
+	<div id="header">
+    	<div class="className">
+        	<span><a href="http://baidu.com">百度</a></span>
+            <span><a href="http://baidu.com">百度</a></span>
+            <span><a href="http://baidu.com">百度</a></span>
+        </div>
+</div>	
+    <!--因为在css，写了span元素的样式-->
+    <span>背景为黄色，距离左边距离30px</span>         
+    <h1>这是标题</h1>
+    <p>这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，</p>
+</body>
+</html>

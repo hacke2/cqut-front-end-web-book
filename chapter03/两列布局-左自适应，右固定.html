@@ -1,0 +1,41 @@
+<html>
+<title>左自适应，右固定</title>
+<head>
+<style type="text/css">
+html {
+		/*解决ie7出现左右滚动条*/
+		overflow-x: hidden;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	#wrapper {
+	    width: 100%;
+	    height: 800px;
+	    background: #fff;
+	}
+	#left{
+		/* 撑开宽度，如果删除此属性，右边可以根据内容决定宽度 */
+		max-width: 80%;
+		height: 800px;
+		float: left;
+		background: #fcc;
+	}
+	#right{
+		position: absolute;
+		right: 0;
+		width: 250px;
+		height: 800px;
+		background: #0ff;
+	}
+</style>
+</head>
+<body>
+  <div id="wrapper">
+   <div id="left"> 此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容此处显示左边栏的内容
+   </div>
+   <div id="right">此处显示右边栏的内容</div>
+  </div>
+</body>
+</html>

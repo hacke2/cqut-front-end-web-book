@@ -1,0 +1,48 @@
+<html>
+<title>三列布局</title>
+<head>
+<style type="text/css">
+ html {
+		/*解决ie7出现左右滚动条*/
+		overflow-x: hidden;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	#wrapper {
+		/* 必须固定宽度 */
+	    width: 1000px;
+		height: 800px;
+		margin: 0 auto;
+	    text-align: center;
+	    background: #fff;
+	}
+	#left{
+		width: 200px;
+		height: 800px;
+		float: left;
+		background: #fcc;
+	}
+	#middle {
+		width: 600px;
+		height: 800px;
+		float: left;
+		background: #eee;
+	}
+	#right{
+		width: 200px;
+		height: 800px;
+		float: left;
+		background: #0ff;
+}
+</style>
+</head>
+<body>
+  <div id="wrapper">
+	  <div id="left">此处显示左边栏的内容</div>
+	  <div id="middle">此处显示中间栏的内容</div>
+	  <div id="right">此处显示右边栏的内容</div>
+  </div>
+</body>
+</html>

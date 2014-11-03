@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>CSS3 box-sizing</title>
+	<style>
+    .content-box{
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+        box-sizing:content-box;
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        border: 5px solid #E6A43F;
+        background: blue;
+    }
+    .padding-box{
+        -webkit-box-sizing:padding-box;
+        -moz-box-sizing:padding-box;
+	box-sizing:padding-box;
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        border: 5px solid #186645;
+        background: red;                
+    }
+    .border-box{
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+	box-sizing:border-box;
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        border: 5px solid #3DA3EF;
+        background: yellow;
+    }
+</style>
+</head>
+<body>
+<div class="content-box"></div>
+<div class="padding-box"></div>
+<div class="border-box"></div>
+</body>
+</html>
