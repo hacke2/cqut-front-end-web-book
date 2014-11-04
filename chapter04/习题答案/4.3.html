@@ -1,0 +1,31 @@
+<!docType html>
+<html>
+<head>
+<style type="text/css">
+#drag {border:1px solid blue;width:100px;height:100px;position:absolute;}
+</style>
+</head>
+<body>
+<ul id="js-books">
+	<li class="js-book">JavaScript 高级程序设计</li>
+	<li class="js-book">编写高质量代码</li>
+	<li class="js-book">用AngularJS开发下一代Web应用</li>
+	<li class="js-book">基于MVC的JavaScript Web富应用开发</li>
+	<li class="js-book">JavaScript设计模式</li>
+	<li class="js-book">JQuery权威指南</li>
+	<li class="js-book">JavaScript权威指南</li>
+	<li class="js-book">了不起的Node.js: 将JavaScript进行到底</li>
+	<li class="js-book">JavaScript模式</li>
+	<li class="js-book">编写可维护的JavaScript</li>
+</ul>
+<script>
+	var ulNode = document.getElementById("js-books");
+	
+	ulNode.onclick = function(event) {
+		var e = event || window.event;
+		var target = ev.target || ev.srcElement;
+		alert(e.target);
+	};
+</script>
+</body>
+</html>

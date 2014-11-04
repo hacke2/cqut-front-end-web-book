@@ -1,0 +1,25 @@
+<!docType html>
+<html>
+<head>
+</head>
+<body onload="SetupLeak()" onunload="BreakLeak()">
+	<div id="LeakedDiv"></div>
+<script>
+	var myGlobalObject;
+    function SetupLeak()
+    {
+        // First set up the script scope to element reference
+        myGlobalObject = document.getElementById("LeakedDiv");
+        // Next set up the element to script scope reference
+        document.getElementById("LeakedDiv").expandoProperty = myGlobalObject;
+    }
+
+    function BreakLeak()
+    {
+        document.getElementById("LeakedDiv").expandoProperty = null;
+    }
+
+   
+</script>
+</body>
+</html>

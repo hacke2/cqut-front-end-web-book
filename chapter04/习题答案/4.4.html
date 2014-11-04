@@ -1,0 +1,42 @@
+<!docType html>
+<html>
+<head>
+</head>
+<body>
+
+<script>
+var Animal = function(name) {
+	this.name = name;
+}
+Animal.prototype.getName = function() {
+	return this.name;
+}
+
+var Brid = function() {
+	this.runWay = "飞";
+	//继承属性
+	Animal.call(this, "小鸟");
+}
+Brid.prototype = new Animal();
+Brid.prototype.run = function() {
+	alert(this.getName() + "是" + this.runWay + "的");
+}
+Brid.prototype.constructor = Brid;
+
+var Dog = function() {
+	this.runWay = "跑";
+	//继承属性
+	Animal.call(this, "小狗");
+}
+Dog.prototype = new Animal();
+Dog.prototype.run = function() {
+	alert(this.getName() + "是" + this.runWay + "的");
+}
+Dog.prototype.constructor = Dog;
+
+
+var dog = new Dog();
+dog.run();
+</script>
+</body>
+</html>

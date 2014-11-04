@@ -1,0 +1,24 @@
+<!docType html>
+<html>
+<head>
+<style type="text/css">
+#drag {border:1px solid blue;width:100px;height:100px;position:absolute;}
+</style>
+</head>
+<body>
+<script>
+function factorial(N) {
+	var result = 1;
+	//如果是N数字的话
+	if(!isNaN(N)) {
+		for(var i = N; i > 0; i--) {
+			result *= i;
+		}
+	}
+	return result;
+}
+factorial(3);
+//factorial("a");
+</script>
+</body>
+</html>

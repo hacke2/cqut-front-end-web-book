@@ -1,0 +1,23 @@
+<!docType html>
+<html>
+<head>
+<style type="text/css">
+#drag {border:1px solid blue;width:100px;height:100px;position:absolute;}
+</style>
+</head>
+<body>
+<script>
+function getParents(id) {
+	var parentNodeArr = [];
+	var node = document.getElementById(id);
+	var parentNode= node.parentNode;
+	while(parentNode == null) {
+		parentNodeArr.push(parentNode);
+		parentNode = parentNode.parentNode;
+	}
+	return parentNodeArr;
+}
+alert(getParents("info").length);
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>My first page</title>
+	<style type="text/css">
+	.edu_dialog{position: absolute;width: 300px;background: #3498f0;font-size: 12px;padding: 5px;border:1px solid #3571a4;box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);}
+	.dg_header{position: relative;width: 100%;padding:0;height: 30px;line-height: 30px;overflow: hidden;}
+	.dg_header .dg_title{position: relative;float: left;width: 80%;color: #fff;font-weight: bold;text-indent: 5px;font: 14px 'microsoft yahei';overflow: hidden;}
+	.dg_close_button{position: absolute;width:20px;height: 20px;line-height: 20px;display: block;right: 0;top: 3px;text-decoration: none;overflow: hidden;text-indent: -200em;background: url('images/icon_close.png') no-repeat 5px 6px;}
+	.dg_close_button:hover{background-color: red;}
+	.dg_content{position: relative;background: #fff;border:1px solid #2384da;min-height: 60px;}
+	.draggable{cursor:move;}
+	</style>
+	<script type="text/javascript" src="EventUtil.js"></script>
+	<script type="text/javascript" src="DOMUtil.js"></script>
+	<script type="text/javascript" src="DragDrop.js"></script>
+	<script type="text/javascript" src="Dialog.js"></script>
+	<script type="text/javascript">
+		var win = null; 
+		function createDialog() {
+			if(!win) {
+				win = new Dialog("一个简单的对话框组件就这样形成了，读者可以进一步的升级完善，让组件更为强大！", "对话框组件");
+			}
+		}
+
+		function closeDialog() {
+			if(win) {
+				win.close();
+				win = null;
+			}
+		}
+	</script>
+</head>
+<body>
+<div>
+	<button onclick="createDialog();">打开对话框</button>
+	<button onclick="closeDialog();">关闭对话框</button>
+</body>
+</html>
