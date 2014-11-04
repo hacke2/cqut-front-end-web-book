@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>bind方法事件绑定</title>
+	<script type="text/javascript" src="../js/jquery 1.8.js"></script>
+</head>
+<body>
+	<div id="container">
+		<button id="warn">提醒</button>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var warnButton = $('#warn');
+			warnButton.bind('click', function (e) {
+				alert('bind事件语法：elem.bind(event类型, 事件处理函数);');
+			});
+		});
+	</script>
+</body>
+</html>

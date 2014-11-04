@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>移动位置的动画</title>
+    <script type="text/javascript" 
+            src="http://libs.baidu.com/jquery/1.9.0/jquery.js">
+    </script>
+    <style type="text/css">
+          *{margin: 0px;padding: 0px;}
+           body{font-size:13px}
+           .divFrame .divTitle{background-color:#eee;padding:5px 0px 5px 0px}
+           .divFrame .divContent .divList{width:162px;position:absolute;border:solid 1px #ccc;background-color:#eee;width:50px;height:50px;float:left;margin-right:2px}
+           .btn {border:#666 1px solid;padding:2px;width:60px;filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff, EndColorStr=#ECE9D8)}
+    </style>
+    <script type="text/javascript">
+        $(function() {
+
+            $("#Button1").click(function() { //左移按钮点击事件
+                //在3000毫秒内，以动画的形式向左移动52个像素
+                $(".divList").animate({ left: "-=150px" }, 1000);
+            })
+            $("#Button2").click(function() { //右移按钮点击事件
+                //在3000毫秒内，以动画的形式向右移动52个像素
+                $(".divList").animate({ left: "+=150px" }, 1000);
+            })
+             $("#Button3").click(function() { //右移按钮点击事件
+                //在3000毫秒内，以动画的形式向右移动52个像素
+                $(".divList").stop();
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="divFrame">
+         <div class="divTitle">
+              <input id="Button1" type="button" value="后退油门" class="btn" />&nbsp;
+              <input id="Button3" type="button" value="停车" class="btn" />&nbsp;
+              <input id="Button2" type="button" value="前进油门" class="btn" />
+         </div>
+         <div class="divContent">
+              <div class="divList">
+                小车
+              </div>
+         </div>
+    </div>
+</body>
+</html>

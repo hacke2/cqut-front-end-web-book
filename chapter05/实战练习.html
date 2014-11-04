@@ -1,0 +1,82 @@
+<!docType html>
+<html  lang="zh-cn">
+<head>
+	<meta charset="gb2312" />
+</head>
+<body>
+	<div id="main"></div>
+<script>
+function Ajax(parametObject) {
+
+	var xhr, responseType, defineParam, method, url, data;
+	defineParam = {
+		method : "GET",
+		type : "json"
+	}
+	url = parametObject.url;
+	data = parametObject.data;
+	responseType = parametObject.type || defineParam.type;
+	method = parametObject.method || defineParam.method;
+
+	if(navigator.userAgent.toUpperCase().indexOf('MSIE') >= 0){
+	    try{
+	        xhr=new ActiveXObject('microsoft.xmlhttp');
+	    }catch(e){
+	    	//兼容 IE5.5 IE 5
+	        xhr=new ActiveXObject('msxml2.xmlhttp');
+	    }
+    }else{
+        xhr=new XMLHttpRequest();
+   	};
+   	xhr.onreadystatechange = function() {
+		if(xhr.readyState == 4) {
+
+			if(responseType == "json") {
+				responseType = JSON.parse(xhr.responseText);
+			}else {
+				responseType = xhr.responseXML;
+			}
+
+			if(xhr.status== 200 && typeof(parametObject.success) == 'function') {
+				parametObject.success(responseType);
+			}else if(xhr.status != 200 && typeof(parametObject.error) == 'function') {
+				parametObject.error(responseType);
+			}
+			
+		}
+	}
+	if(method.toUpperCase() == "GET") {
+		if(data) {
+			url = url + '?' + data + '&random=' +Math.random();
+		}
+		xhr.open('GET', url, true);
+		xhr.send(null);
+	}
+	if(method.toUpperCase() == "POST") {
+		xhr.open('POST', url, true);
+		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		xhr.send(data);
+	}
+
+}
+
+Ajax({
+	url : "data/book.json",
+	success : function(data) {
+		createTable(data);
+	}
+});
+
+function createTable(data) {
+	var books = data;
+	var tableHtml = '<table><th>书名</th><th>价格</th>';
+	for(var i = 0, len = books.length; i < len; i++) {
+		var tr = '<tr><td>'+books[i].title+'</td><td>'+books[i].price+'</td></tr>';
+		tableHtml += tr;
+	}
+	tableHtml += '</table>';
+document.getElementById("main").write(tableHtml);
+}
+</script>
+</body>
+</html>

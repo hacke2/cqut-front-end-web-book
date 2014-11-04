@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>幻灯片</title>
+<style>
+ul li{
+	list-style-type:none;
+}
+body{
+	background-image:url(image/fancy_deboss.png);	
+}
+.container{
+	width:700px;
+	height:460px;
+	margin:20px auto 0px auto;
+	position:relative;
+}
+.showphoto{
+	position:absolute;
+}
+.button{
+	width:inherit;
+	height:inherit;
+	position:absolute;
+	display:none;
+}
+#prev,#next{	
+	width:30px;
+	height:40px;
+	background-color:#333;
+	position:absolute;
+	top:185px;
+}
+#next{
+  right:0;
+}
+#prev img{
+	margin-top:10px;
+	margin-left:5px;
+}
+#next img{
+	margin-left:10px;
+	margin-top:10px;
+}
+</style>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="photo.js"></script>
+</head>
+	
+<body>
+	<div class="container"> 
+    	<div class="showphoto"><img src="image/1.jpg"></div>
+        <div class="button">
+            <div id="prev"><a href="javascript:void(0)"><img src="image/prev.png"/></a></div>
+            <div id="next"><a href="javascript:void(0)"><img src="image/next.png"/></a></div>
+        </div>
+        <ul id="photos">
+           <li><a href="image/1.jpg"></a></li>
+           <li><a href="image/2.jpg"></a></li>
+           <li><a href="image/3.jpg"></a></li>
+        </ul>
+     </div>
+</body>
+</html>

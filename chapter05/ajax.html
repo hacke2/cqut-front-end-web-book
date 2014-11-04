@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AJAX运用</title>
+	<script type="text/javascript">
+		function getData(url, callback) {
+			var req = new XMLHttpRequest();// 创建XHR对象
+			req.open("post", url);// 用POST方式向服务器发送请求
+			req.onreadystatechange = function() {
+				// 如果请求完成
+				if(req.readyState === 4 && req.status === 200) {
+					if(null != callback) {
+						callback(req);
+					}
+				}
+			};
+			req.send(null);// 立即发送请求
+		}
+
+		function showData(req) {
+			var type = req.getResponseHeader("Content-Type");
+			if(type.match(/^text/)) {// 如果数据类型是文本
+				alert(req.responseText);// 显示json文本
+				var obj = eval("(" + req.responseText +")");// 转换成对象
+				alert(obj.say);
+			} else if(type.match(/xml$/)){
+				var xml = req.responseXML;
+				alert(xml.getElementsByTagName("say")[0].firstChild.nodeValue);
+			} else {
+				alert(type);// 显示类型
+			}
+		}
+	</script>
+</head>
+<body>
+	<button onclick="getData('data.txt', showData);">获取文本</button>
+	<button onclick="getData('data.xml', showData);">获取xml</button>
+</body>
+</html>

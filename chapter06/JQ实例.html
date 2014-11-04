@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>bind方法事件绑定</title>
+	<style type="text/css">
+	#wrapper {
+		width: 100%;
+		height: 1200px;
+}
+#returnTop {
+		width: 45px;
+		height: 45px; 
+		position: fixed; 
+		bottom: 50px; 
+		right: 50px; 
+}
+#operation-button {
+        display: block;
+        width: 100%; 
+        height: 45px; 
+        color: #fff; 
+        line-height: 45px; 
+        text-align: center; 
+        background-color: #00669A; 
+        border-radius: 50% 50% 50% 50% / 50% 50% 40% 40%;; 
+}</style>
+	<script type="text/javascript" src="jquery-2.0.3.js"></script>
+</head>
+<body>
+	<!—这里主要是撑起内容区域 -->
+	<div id="wrapper">
+		<p>这里是内容！</p>
+	</div>
+	<!—真正功能按钮 -->
+	<div class="operation-area" id="returnTop">
+	        <a href="#" id="operation-button">
+	            <span class="operation-text">顶部</span>
+	        </a>
+	</div>
+	<script type="text/javascript">
+//回到顶部插件
+(function($, undefined) {
+//滚动条滚动，出现返回顶部的最小高度
+var upperLimit = 500;
+//回到顶部的点击元素
+var scrollElem = $('#returnTop');
+//回滚动画的速度
+var scrollSpeed = 900;
+//默认隐藏
+scrollElem.hide();
+//监听滚动事件
+$(window).scroll(function () {
+//获取滚动条距离顶部的距离
+var scrollTop = $(document).scrollTop();
+if ( scrollTop > upperLimit ) {
+$(scrollElem).stop().fadeTo(100, 1); //慢慢出现
+} else {	
+$(scrollElem).stop().fadeTo(100, 0); //褪去
+}
+});
+//给返回顶部元素绑定点击事件，并且设置返回的动画
+$(scrollElem).click(function(){
+$('html, body').animate({ 
+scrollTop:0
+}, scrollSpeed);
+return false;
+});
+})(jQuery);
+	</script>
+</body>
+</html>
