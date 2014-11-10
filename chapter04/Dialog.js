@@ -18,7 +18,7 @@
 		doc.body.appendChild(ui.content);// 将UI加入到body中
 		setPosition(ui.content, lef, top);// 设置位置
 
-		EventUtil.addHandler(ui.elements[4], 'click', closeFun);// 绑定关闭事件
+		EventUtil.addEvent(ui.elements[4], 'click', closeFun);// 绑定关闭事件
 
 		this.ui = ui;
 	};
@@ -28,7 +28,7 @@
 		var target = EventUtil.getTarget(event);
 		target.setAttribute("isClose", "1");// 设置关闭标记，防止关闭后调用close() 报错
 		EventUtil.preventDefault(event);// 阻止默认事件
-		EventUtil.removeHandler(target ,"click", closeFun);
+		EventUtil.removeEvent(target ,"click", closeFun);
 		doc.body.removeChild(target.offsetParent.offsetParent);
 	}
 
@@ -42,7 +42,7 @@
 
 	Dialog.prototype.close = function() {
 		if(null !== this.ui && !this.ui.elements[4].getAttribute("isClose")) {
-			EventUtil.removeHandler(this.ui.elements[4] ,"click", closeFun);
+			EventUtil.removeEvent(this.ui.elements[4] ,"click", closeFun);
 			doc.body.removeChild(this.ui.content);
 		}
 		this.ui = null;

@@ -19,7 +19,7 @@
 		}
 	}
 
-	function getEvent() {
+	function getEvent(event) {
 		return e = event || window.event;
 	}
 
@@ -53,7 +53,7 @@
 		}
 	};
 	//阻止默认行为
-	EventUtil.preventDefault = function () {
+	EventUtil.preventDefault = function (e) {
 		if(isIE) {
 			e.returnValue = false;
 		} else if(isOther) {
@@ -89,8 +89,8 @@
 		}       
     },
 	//获取实际事件源
-	EventUtil.getTarget = function () {
-		var e = getEvent();
+	EventUtil.getTarget = function (event) {
+		var e = getEvent(event);
 
 		return e.target || e.srcElement;
 	}
