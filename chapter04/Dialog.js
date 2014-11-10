@@ -24,6 +24,7 @@
 	};
 
 	function closeFun(event) {// 点击关闭按钮执行的方法
+		debugger
 		event = EventUtil.getEvent(event);// 获取事件对象
 		var target = EventUtil.getTarget(event);
 		target.setAttribute("isClose", "1");// 设置关闭标记，防止关闭后调用close() 报错

@@ -25,6 +25,8 @@
 
 	var EventUtil = new Object();
 
+	EventUtil.getEvent = getEvent;
+
 	//°ó¶¨ÊÂ¼þ
 	EventUtil.addEvent = function(obj, type, callback, isBubble) {
 		if(isSuit(obj)) {
