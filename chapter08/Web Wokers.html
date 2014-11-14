@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="gb2312">
+<title>worker</title>
+<script type="text/javascript">
+	var worker=null;
+//开启Worker线程计算
+	function caculateInThread(){
+//开始一个worker线程
+		var worker = new Worker("worker.js");
+//监听worker的返回结果
+		worker.onmessage = function(event){
+			document.getElementById('result').innerHTML = "计算结果为："+event.data;
+		};
+		worker.onerror = function(event){
+			dump('Worker error:'+error.message+'/n');
+			throw error;
+		};
+		var number=document.getElementById("numberText").value;
+//先worker线程传递参数
+		worker.postMessage(number);
+	}
+	//停止Worker线程
+	function stop(){
+		worker.terminate();
+	}
+	//非Worker线程计算结果
+	function caculate(){
+		var number=document.getElementById("numberText").value;
+		document.getElementById('result').innerHTML = "计算结果为："+fibonacci(number);
+	}
+	
+	var fibonacci =function(n) {
+		return n <2? n : arguments.callee(n -1) + arguments.callee(n -2);
+	};
+</script>
+</head>
+<body>
+	<input type="text" name="numberText" id="numberText"/>
+	<input type="button" name="开始计算" id="caculate" value="开始线程计算" 			onClick="caculateInThread()"/>
+	<input type="button" name="停止计算" id="stop" value="停止线程计算" onClick="stop()"/>
+	<input type="button" name="开始计算" id="stop" value="非线程计算" onClick="caculate()"/>
+	<div id="result">计算结果为：</div>
+</body>
+</html>

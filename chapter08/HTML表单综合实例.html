@@ -1,0 +1,98 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表单综合案例</title>
+<style type="text/css">
+	input{width:150px;}
+	.table{
+		width:300px;
+		border:thick;
+	}
+	.propertyone{
+		width:170px;
+		height:40px;
+		text-align:center;
+	}
+	.propertytwo{
+		width:170px;
+		height:40px;
+		text-align:center;
+	}
+	.submit{
+		width:70px;
+	}
+</style>
+</head>
+<body>
+<form autocomplete="off" method="post" action="#">
+	<table class="table">
+		<tr>
+			<td class="propertyone">Color:</td>
+			<td class="propertyone"><input type="color" name="color"/></td>
+			<td class="propertyone">Date:</td>
+			<td class="propertyone"><input type="date" name="date"/></td>
+		</tr>
+		<tr>
+			<td class="propertyone">Datetime:</td>
+			<td class="propertyone"><input type="datetime" 
+name="dtime"></td>
+			<td class="propertyone">Datetime-local:</td>
+			<td class="propertyone"><input type="datetime-local"
+name="datetime-local"/></td>
+		</tr>
+		<tr>
+			<td class="propertyone">Month:</td>
+			<td class="propertyone"><input type="month" 
+name="month"/></td>
+			<td class="propertyone">Time:</td>
+			<td class="propertyone"><input type="time" name="time"/></td>
+		</tr>
+		<tr>
+			<td class="propertyone">Week:</td>
+			<td class="propertyone"><input type="week" name="week" 
+ 				required="required"/></td>
+			<td class="propertyone">email:</td>
+			<td class="propertyone"><input type="email" name="email" 
+placeholder="请输入Email"/></td>
+		</tr>
+		<tr>
+			<td class="propertyone">Number:</td>
+			<td class="propertyone"><input type="number" step="5" min="5" 
+max="20" name="number"  value="0"/></td>
+			<td class="propertyone">Range:</td>
+			<td class="propertyone"><input type="range" name="range" 
+min="0" max="10" step="1" value="" /></td>
+</tr>
+		<tr>
+			<td class="propertyone">Search:</td>
+			<td class="propertyone"><input type="search" value="search" 
+name="search_name"  autofocus="autofocus"/></td>
+			<td class="propertyone">Tel:</td>
+			<td class="propertyone">
+				<input type="tel"  name="tel"  list="telList" 
+placeholder="请输入电话号码"/>
+				<datalist id="telList">
+					<option>023-22222222</option>
+					<option>024-55555555</option>
+				</datalist>
+			</td>
+		</tr>
+		<tr>
+			<td class="propertyone">Url:</td>
+			<td class="propertyone"><input type="url" name="user_url" 
+formnovalidate="true"/></td>
+			<td class="propertyone">File:</td>
+			<td class="propertyone"><input type="file" name="img" 
+multiple="multiple"/></td>
+		</tr>
+		<tr>
+			<td colspan="4" align="center">
+				<input type="submit" name="submit" value="submit" 
+class="submit"/>
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

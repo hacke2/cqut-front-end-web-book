@@ -1,0 +1,27 @@
+<DCOTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>background-origin案例</title>
+<style type="text/css">
+.test {
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    background:url(4.jpg);
+    background-size:100px 100px;
+    background-origin: content-box;
+    background-repeat:no-repeat;
+    border: 10px dotted #000;
+    }
+</style>
+</head>
+<body>
+<div class="test">this some text this some text this some text this some text this some text this some text this some text this some text this some text this some text this some text</div>
+<div class="test" style="background-origin: padding-box;">this some text this some text this some text this some text this some text this some text this some text this some text this some text this some text this some text</div>
+<div class="test" style="background-origin: border-box;">this some text this some text this some text this some text this some text this some text this some text this some text this some text this some text this some text</div>
+</body>
+</html>
