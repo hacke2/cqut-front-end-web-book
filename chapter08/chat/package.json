@@ -1,0 +1,19 @@
+{
+  "name": "cqut-chat",
+  "version": "1.0.0",
+  "description": "cqut-web-book",
+  "main": "app.js",
+  "dependencies": {
+    "socket.io": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cqut",
+    "chat"
+  ],
+  "author": "hacke2",
+  "license": "ISC"
+}

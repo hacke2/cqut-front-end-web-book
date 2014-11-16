@@ -1,0 +1,39 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3 2D/3D</title>
+<style type="text/css">
+div {
+    width:90px;
+    height:90px;
+    background-color:#37d10d;
+    border:1px solid black;
+    }
+
+div#div1 {
+    margin: 100px;
+    transform:rotate(45deg);
+    -ms-transform:rotate(45deg); /* IE 9 */
+    -webkit-transform:rotate(45deg); /* Chrome */
+    }
+div#div2 {
+    margin: 200px;
+    transform:scale(2,2);
+    -ms-transform:scale(2,2); /* IE 9 */
+    -webkit-transform:scale(2,2); /* Chrome */
+    }
+div#div3 {
+    margin-left: 140px;
+    transform:rotateX(120deg);
+    -webkit-transform:rotateX(120deg); /* Chrome */
+}	
+</style>
+</head>
+<body>
+<div>使用rotate旋转45度</div>
+<div id="div1">使用rotate旋转45度</div>
+<div id="div2">使用scale宽高放大两倍</div>
+<div id="div3">使用rotateX围绕X轴旋转120度</div>
+</body>
+</html>

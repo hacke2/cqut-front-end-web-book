@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3边框</title>
+<style type="text/css">
+.radius{
+        width: 300px;
+        height: 90px;
+        border-radius: 30px;
+        border: 5px solid #000;
+        line-height: 90px;
+        text-align: center;
+}
+.shadow {
+    width: 300px;
+    height: 90px;
+    color: white;
+    background-color: red;
+    box-shadow: 10px 10px 10px #888888;
+    line-height: 90px;
+    text-align: center;
+}
+.image{
+    width: 300px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        border: 20px solid transparent;
+        border-image: url(4.jpg) 22 22 22 22 round;
+ }
+</style>
+</head>
+<body>
+<div class="radius">border-radius</div>
+<div class="shadow">border-shadow</div>
+<div class="image">border-image</div>
+</body>
+</html>

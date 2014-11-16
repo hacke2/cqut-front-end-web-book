@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3 动画</title>
+<style type="text/css">
+div {
+    -webkit-animation: myfirst 5s;  /* Chrome */
+    animation: myfirst 5s;
+
+}
+@keyframes myfirst {
+    0%  {background: red;}
+    25% {background: yellow;}
+    50% {background: blue;}
+    100%{background: green;}
+}
+
+@-webkit-keyframes myfirst {  /* Chrome */
+    0%  {background: red;}
+    25% {background: yellow;}
+    50% {background: blue;}
+    100%{background: green;}
+}
+</style>
+</head>
+<body>
+<div>动画</div>
+</body>
+</html>
