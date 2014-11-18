@@ -1,3 +1,7 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
 body {
     color: #666;
     background: #fdfdfd;
@@ -8,9 +12,12 @@ a {
     color: #7CAE23;
     text-decoration: none;
 }
-a:hover {
-    text-decoration: underline;
+ul {
+    list-style: none;
 }
+
+
+
 #body-wrapper {
 	max-width: 960px;
 	padding-top: 0;
@@ -23,8 +30,13 @@ a:hover {
 }
 .title-area {
 	padding-top: 15px;
-	width: 400px;
+	width: auto;
 	height: 120px;
+    font-size: 16px;
+}
+
+.description {
+    margin-top: 10px;
 }
 .content-area {
     background: #fff;
@@ -44,6 +56,13 @@ a:hover {
 	text-align: center;
 	border-bottom: 1px solid #FFF0B5;
 }
+
+.main-nav li {
+    display: inline-block;
+    margin: 18px 0 0 45px;
+
+}
+
 .main-area {
 	list-style-position: inside;
 	line-height: 36px;
@@ -52,10 +71,60 @@ a:hover {
 	width: 1000px;
 }
 .side-area {
-	position: absolute; 
-	top: 0px;
 	overflow: hidden;
 	width: 220px;
 	background: #fff;
-	border-bottom: 1px solid #ddd;
+    float: left;
+}
+
+.side-area li {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding-left: 5px;
+}
+
+.side-area li.first-li {
+    border-top: 1px solid #ddd;
+}
+#article h1 {
+    text-align: center;
+}
+
+#article h2 {
+    color: #7CAE23;
+    margin: 5px;
+}
+@media (max-width: 960px) {
+    .main-area,
+    #footer-wrapper {
+        width: auto;
+    }
+    .head-area,.side-area {
+        text-align: center;
+    }
+    .nav-area {
+        height: auto;
+        font-size: 16px;
+    }
+    .main-nav {
+        width: auto;
+        margin: 0;
+        line-height: 40px;
+    }
+    .main-nav li {
+        display: block;
+        margin: 0;
+    }
+    .side-area {
+        margin-bottom: 20px;
+        width: auto;
+        float: none;
+    }
+
+    .content-area,
+    .comment-area {
+        margin-left: 0;
+        width: auto;
+    }
 }
