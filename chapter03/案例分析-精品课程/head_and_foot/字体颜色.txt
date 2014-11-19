@@ -1,0 +1,9 @@
+1.搜索
+全站搜索：font-size:16px;color:#eab807;font-family:"微软雅黑"
+请输入搜索内容：color:#eab807;font-size:12px;font-family:宋体;
+
+2.精品课程名称：font-size:30pxl;font-family:"明黑" "黑体"
+
+3.导航字体：font-size:18px;font-family:"微软雅黑"
+
+4.尾部字体：font-size:"宋体";font-size:12px;
